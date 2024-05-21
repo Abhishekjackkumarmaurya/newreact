@@ -1,39 +1,40 @@
-import './App.css';
-import Item from './components/Item';
-import ItemDate from './components/ItemDate';
+import React from "react"; 
+import Products from './components/Product'
 
-function App() {
-const product = [
+const App = () =>{
+const products = [
   {
-    ItemName:"Nirma",
-    ItemDay:"30",
-    ItemMonth:"July",
-    ItemYear:"2027"
+    id:'p1',
+    title:'Nirma',
+    amount:100,
+    date: new Date(2021,8,10)
   },
   {
-    ItemName:"SurfExcel",
-    ItemDay:"3",
-    ItemMonth:"January",
-    ItemYear:"2029"
+    id:'p2',
+    title:'Ghadi',
+    amount:300,
+    date: new Date(2021,1,15)
   },
   {
-    ItemName:"Tide",
-    ItemDay:"20",
-    ItemMonth:"June",
-    ItemYear:"2025"
-  }
+    id:'p3',
+    title:'SorfExcel',
+    amount:200,
+    date: new Date(2021,3,1)
+  },
+ 
+    
+  {
+    id:'p4',
+    title:'Ring',
+    amount:200,
+    date: new Date(2021,30,1)
+  },
+ 
+    
 ]
   return (
     <div>
-      <Item name={product[0].ItemName}>
-        mai hu aapka first element 
-      </Item>
-      <ItemDate day={product[0].ItemDay} month={product[0].ItemMonth} year={product[0].ItemYear}></ItemDate>
-      <Item name={product[1].ItemName}></Item>
-      <ItemDate  day={product[1].ItemDay} month={product[1].ItemMonth} year={product[1].ItemYear}></ItemDate>
-      <Item name={product[2].ItemName}></Item>
-      <ItemDate day={product[2].ItemDay} month={product[2].ItemMonth} year={product[2].ItemYear}></ItemDate>
-      <div className='App'>Hello jii i am Abhi</div>
+      <Products items= {products} />
     </div>
   );
 }
